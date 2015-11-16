@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Homepage </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon.png" sizes="16x16 32x32 48x48 64x64" type="image/png">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="layout.css">
+  <script>
+    function startTime() {
+              var today=new Date();
+              var h=today.getHours();
+              var m=today.getMinutes();
+              var s=today.getSeconds();
+              var timeOfDay = (h < 12) ? "AM" : "PM";
+              h = (h > 12) ? h - 12 : h;
+    	  if (h === 0) {
+    		h = 12;
+    		}
+    	  m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('clock').innerHTML = h+":"+m+":"+s+" "+timeOfDay;
+    	    var t = setTimeout(function(){startTime()},500);
+    	}
+    	function checkTime(i) {
+    	    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    	    return i;
+    	}
+// Focuses on the bar on keydown.
+document.onkeydown = function(e) {
+    var input = document.getElementById('usr');
+    input.focus();
+}
+  </script>
+  <style>
+h2 {
+margin-top: 10px;
+}
+  </style>
+</head>
+
+<body onload="startTime()">
+
+  <div id="clock" style="font-size: 2.27em;"></div>
+
+  <video autoplay loop id="bgvid"> <!-- poster="images/background.jpg" -->
+    <source src="images/siege.webm" type="video/webm">
+  </video>
+
+  <div class="container" style="position: absolute; left: 50%; top: 50%; transform: translateY(-50%) translateX(-50%) ! important;">
+    <form method="get" action="https://google.ca/search">
+      <input type="text" class="form-control" id="usr" style="background-color:rgba(255, 255, 255, .8); padding: 0px 7px;  height: 38px; font-size: 1.8em;" name="q" placeholder="" autofocus="autofocus" autocomplete="off" search_="" />
+    </form>
+    <div class="row" style="background-color: rgba(255, 255, 255, 0.8); width: 100%; margin-left: auto; margin-right: auto; margin-top: 10px; border-radius: 3px;">
+    <ul class="col-md-3 col-xs-6 col-sm-6 ">
+      <h2><a href="https://4chan.org/" class="nostyle ">4chan</a></h2>
+          <li><a href="https://boards.4chan.org/g/ ">/g/</a></li>
+          <li><a href="https://boards.4chan.org/g/desktop ">/desktop/</a></li>
+          <li><a href="https://boards.4chan.org/g/mkg ">/mkg/</a></li>
+	  <li><a href="https://boards.4chan.org/g/bst ">/bst/</a></li>
+          <li><a href="https://boards.4chan.org/wg/startpage ">/startpage/</a></li>
+    </ul>
+    <ul class="col-md-3 col-xs-6 col-sm-6 ">
+      <h2>social</h2>
+          <li><a href="https://facebook.com/ ">facebook</a></li>
+          <li><a href="https://twitter.com/ ">twitter</a></li>
+	  <li><a href="https://inbox.google.com/ ">inbox</a></li>
+	  <li><a href="https://secure.superuser.xyz:7777 ">irc (external)</a></li>
+	  <li><a href="https://192.168.1.64:7777 ">irc (internal)</a></li>
+    </ul>
+    <ul class="col-md-3 col-xs-6 col-sm-6 ">
+      <h2>media</h2>
+          <li><a href="https://youtube.ca/ ">youtube</a></li>
+          <li><a href="https://soundcloud.com/ ">soundcloud</a></li>
+          <li><a href="https://play.spotify.com/ ">spotify</a></li>
+          <li><a href="https://news.google.ca/ ">news</a></li>
+	  <li><a href="#" style="visibility: hidden; ">&nbsp;</a></li>
+    </ul>
+    <ul class="col-md-3 col-xs-6 col-sm-6 ">
+      <h2>linux</h2>
+	  <li><a href="https://github.com/vistamon82/ ">github</a></li>
+          <li><a href="https://reddit.com/r/unixporn ">unixporn</a></li>
+          <li><a href="https://wiki.installgentoo.com/index.php/Main_Page ">installgentoo</a></li>
+          <li><a href="http://vm82.me">vm82.me</a></li>
+	  <li><a href="#" style="visibility: hidden; ">&nbsp;</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66793301-3', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
